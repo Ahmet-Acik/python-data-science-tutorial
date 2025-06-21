@@ -67,7 +67,37 @@ match game:
         print('You are playing tennis.')
     case _:
         print('You are playing something else.')
-        
+
+# match-case statement with a single case
+# Example month value
+month = 4  # Example month value
+match month:
+    case 1:
+        print('January')
+    case 2:
+        print('February')
+    case 3:
+        print('March')
+    case 4:
+        print('April')
+    case 5:
+        print('May')
+    case 6:
+        print('June')
+    case 7:
+        print('July')
+    case 8:
+        print('August')
+    case 9:
+        print('September')
+    case 10:
+        print('October')
+    case 11:
+        print('November')
+    case 12:
+        print('December')
+# Example of a match-case statement with a default case
+
 # match-case statement with multiple cases
 # Example grade value
 grade = 'A'  # Example grade value
@@ -199,6 +229,10 @@ def get_month_name(month):
             return "December"
         case _:
             return "Invalid month"
+
+
+
+# Example usage of the functions
 
 
 if __name__ == "__main__":
