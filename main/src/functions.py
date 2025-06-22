@@ -277,9 +277,13 @@ print(
 # reduce function
 from functools import reduce
 
-map() # map() function returns a map object(which is an iterator) of the results after applying the given function to each item of a given iterable (list, tuple etc.)
-filter() # filter() function returns an iterator 
-reduce() # reduce() function returns a single value
+# map() # map() function returns a map object(which is an iterator) of the results after applying the given function to each item of a given iterable (list, tuple etc.)
+# filter() # filter() function returns an iterator
+# reduce() # reduce() function returns a single value
+
+
+def sum_list(param):
+    pass
 
 
 print(f"sum_list([1, 2, 3, 4, 5]) {sum_list([1, 2, 3, 4, 5])}")  # 15
