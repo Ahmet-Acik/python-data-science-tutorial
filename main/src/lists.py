@@ -397,6 +397,9 @@ print(f"squared_odd_numbers: {squared_odd_numbers}")  # [1, 9, 25, 49, 81]
 matrix = [[x for x in range(1, 4)] for _ in range(3)]
 print(f"matrix: {matrix}")  # [[1, 2, 3], [1, 2, 3], [1, 2, 3]]
 
+# list comprehension with nested loops
+matrix2 = [[i * j for j in range(1, 5)] for i in range(1, 5)]
+print(f"matrix2: {matrix2}")  # [[1, 2, 3, 4], [2, 4, 6, 8], [3, 6, 9, 12], [4, 8, 12, 16]]
 
 def get_first_item(items):
     return items[0]
