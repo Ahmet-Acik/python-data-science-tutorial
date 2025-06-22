@@ -552,3 +552,26 @@ text_file_path ='flt.txt'
 if not os.path.exists(text_file_path):
     with open(text_file_path, 'w') as file:
         file.write('1,2,3\n4,5,6\n7,8,9')
+
+nested_list = []
+with open(text_file_path, 'r') as file:
+    for line in file:
+        nested_list.append([int(num) for num in line.strip().split(',')])
+flattened_list = [num for sublist in nested_list for num in sublist if num > 3 and not num % 2 == 0]
+print(flattened_list)  # Output: [5, 7, 9, 11, 13, 15]
+
+import json
+json_file_path = 'flt.json'
+if not os.path.exists(json_file_path):
+    sample_data = [
+        {"name": "Alice", "grade": 85},
+        {"name": "Bob", "grade": 75},
+        {"name": "Charlie", "grade": 90},
+    ]
+    with open(json_file_path, 'w') as file:
+        json.dump(sample_data, file, indent=4)
+with open(json_file_path, 'r') as file:
+    students = json.load(file)
+high_scorers = [student["name"] for student in students if student["grade"] > 80]
+print(high_scorers)  # Output: ['Alice', 'Charlie']
+
