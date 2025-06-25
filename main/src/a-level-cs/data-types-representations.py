@@ -27,7 +27,6 @@ write('example.wav', samplerate, data.astype(np.float32))
 data, samplerate = sf.read('example.wav')
 print("Audio shape:", data.shape)
 
-
 # Create a new RGB image (100x100) with a red background
 img = Image.new('RGB', (100, 100), color='red')
 img.save('example.jpg')
@@ -36,7 +35,6 @@ img.save('example.jpg')
 img = Image.open('example.jpg')
 img.show()
 
-
 # Create a simple DataFrame and save as data.csv
 df = pd.DataFrame({
     'name': ['Alice', 'Bob', 'Charlie'],
@@ -44,11 +42,9 @@ df = pd.DataFrame({
 })
 df.to_csv('data.csv', index=False)
 
-
 # CSV: Read and display data
 df = pd.read_csv('data.csv')
 print(df.head())
-
 
 # Create a simple DataFrame and save as data.xlsx
 df = pd.DataFrame({
@@ -61,13 +57,15 @@ df = pd.read_excel('data.xlsx')
 print(df.head())
 # Excel: Read and display data
 
-# Create a simple DataFrame and save as data.json
+import pandas as pd
+
+# Create a simple DataFrame and save as data.json (array of objects)
 df = pd.DataFrame({
     'name': ['Robert', 'Alice', 'Charlie'],
     'age': [30, 25, 35]
 })
-df.to_json('data.json', orient='records', lines=True)
+df.to_json('data.json', orient='records', lines=False)
+
 # JSON: Read and display data
-df = pd.read_json('data.json', orient='records', lines=True)
+df = pd.read_json('data.json', orient='records')
 print(df.head())
-# JSON: Read and display data
