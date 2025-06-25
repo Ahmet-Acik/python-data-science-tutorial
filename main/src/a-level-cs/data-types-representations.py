@@ -23,7 +23,6 @@ data = 0.5 * np.sin(2 * np.pi * frequency * t)
 write('example.wav', samplerate, data.astype(np.float32))
 # Sound: Write audio file (WAV)
 
-
 # Sound: Read audio file (WAV)
 data, samplerate = sf.read('example.wav')
 print("Audio shape:", data.shape)
@@ -49,3 +48,15 @@ df.to_csv('data.csv', index=False)
 # CSV: Read and display data
 df = pd.read_csv('data.csv')
 print(df.head())
+
+
+# Create a simple DataFrame and save as data.xlsx
+df = pd.DataFrame({
+    'name': ['Alice', 'Bob', 'Charlie'],
+    'age': [30, 25, 35]
+})
+df.to_excel('data.xlsx', index=False)
+# Excel: Read and display data
+df = pd.read_excel('data.xlsx')
+print(df.head())
+# Excel: Read and display data
