@@ -60,3 +60,14 @@ df.to_excel('data.xlsx', index=False)
 df = pd.read_excel('data.xlsx')
 print(df.head())
 # Excel: Read and display data
+
+# Create a simple DataFrame and save as data.json
+df = pd.DataFrame({
+    'name': ['Robert', 'Alice', 'Charlie'],
+    'age': [30, 25, 35]
+})
+df.to_json('data.json', orient='records', lines=True)
+# JSON: Read and display data
+df = pd.read_json('data.json', orient='records', lines=True)
+print(df.head())
+# JSON: Read and display data
