@@ -935,3 +935,34 @@ class ShoppingCart:
 # my_cart.add_item("Tablet", 300)
 # print(my_cart.items)
 # my_cart.remove_item("Phone")
+
+class Bank:
+
+    def __init__(self, name, location):
+        self.name = name
+        self.location = location
+        self.accounts = []
+
+    def add_account(self, account):
+        self.accounts.append(account)
+
+    def remove_account(self, account):
+        self.accounts.remove(account)
+
+    def calculate_total_deposits(self):
+        return sum(account.balance for account in self.accounts)
+
+    def calculate_total_withdrawals(self):
+        return sum(account.withdrawals for account in self.accounts)
+
+    def calculate_total_balance(self):
+        return sum(account.balance for account in self.accounts)
+
+# Example usage
+# my_bank = Bank("My Bank", "New York")
+# my_bank.add_account(BankAccount("123456789", "Furkan", 1000))
+# my_bank.add_account(BankAccount("987654321", "John", 2000))
+# print(my_bank.calculate_total_balance())
+# Example usage
+# my_bank = Bank("My Bank", "New York")
+# my_bank.add_account(BankAccount("123456789", "Furkan", 1000))
