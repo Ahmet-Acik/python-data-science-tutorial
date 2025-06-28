@@ -907,3 +907,31 @@ class Library:
 # my_library.register_member("Member1")
 # my_library.register_member("Member2")
 # print(my_library.members)
+
+
+class ShoppingCart:
+
+    def __init__(self):
+        self.items = {}
+        self.total_price = 0
+
+    def add_item(self, item, price):
+        self.items[item] = price
+
+    def remove_item(self, item):
+        del self.items[item]
+
+    def calculate_total(self):
+        self.total_price = sum(self.items.values())
+        return self.total_price
+
+    def checkout(self):
+        print(f"Total price: {self.total_price}")
+
+# Example usage
+# my_cart = ShoppingCart()
+# my_cart.add_item("Laptop", 1000)
+# my_cart.add_item("Phone", 500)
+# my_cart.add_item("Tablet", 300)
+# print(my_cart.items)
+# my_cart.remove_item("Phone")
