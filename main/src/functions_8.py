@@ -21,4 +21,11 @@ print(list(mapped))
 mapped = map(lambda x: x.upper(), strings)
 print(list(mapped))
 
+mapped = map(lambda x: x.split(), strings)
+print(list(mapped))
+
+mapped = map(lambda x: x.split(), strings)
+for item in mapped:
+    print(item)
+
 
