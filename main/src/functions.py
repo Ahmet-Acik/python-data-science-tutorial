@@ -442,3 +442,18 @@ print(math_operations(5, 3, "-"))
 print(math_operations(5, 3, "*"))
 print(math_operations(5, 3, "/"))
 
+
+def math_operations(a, b, operation):
+    operations = {
+        "+": lambda x, y: x + y,
+        "-": lambda x, y: x - y,
+        "*": lambda x, y: x * y,
+        "/": lambda x, y: x / y if y != 0 else "Division by zero error"
+    }
+    return operations.get(operation, lambda x, y: "Invalid operation")(a, b)
+print(math_operations(5, 3, "+"))  # 8
+print(math_operations(5, 3, "-"))  # 2
+print(math_operations(5, 3, "*"))  # 15
+print(math_operations(5, 3, "/"))  # 1.6666666666666667
+print(math_operations(5, 0, "/"))  # Division by zero error
+
