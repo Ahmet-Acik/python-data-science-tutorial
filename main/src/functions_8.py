@@ -18,4 +18,7 @@ mapped =map(len, strings)
 print((mapped))
 print(list(mapped))
 
+mapped = map(lambda x: x.upper(), strings)
+print(list(mapped))
+
 
