@@ -1,4 +1,3 @@
-
 # range() function
 rng = range(6)
 print(rng)
@@ -10,11 +9,10 @@ print(list(rng))
 print(set(rng))
 print(tuple(rng))
 
-
 # map() function
 
 strings = ["Hello World, It is a beautiful day", "Python is awesome", "I am learning Python"]
-mapped =map(len, strings)
+mapped = map(len, strings)
 print((mapped))
 print(list(mapped))
 
@@ -29,10 +27,10 @@ for item in mapped:
     print(item)
 
 
-
 # filter() function
 def is_even(n):
     return n % 2 == 0
+
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 filtered = filter(is_even, numbers)
@@ -42,8 +40,11 @@ print(list(filtered))
 
 # reduce() function
 from functools import reduce
+
+
 def add(x, y):
     return x + y
+
 
 numbers = [1, 2, 3, 4, 5]
 reduced = reduce(add, numbers)
@@ -98,6 +99,8 @@ print(sorted_list)  # Output: ['cherry', 'banana', 'apple']
 # any function
 def is_positive(n):
     return n > 0
+
+
 numbers = [-1, 2, 3, -4, 5]
 print(any(is_positive(n) for n in numbers))  # Output: True
 
@@ -105,6 +108,8 @@ print(any(is_positive(n) for n in numbers))  # Output: True
 # all function
 def is_positive(n):
     return n > 0
+
+
 numbers = [1, 2, 3, 4, 5]
 print(all(is_positive(n) for n in numbers))  # Output: True
 
@@ -128,3 +133,25 @@ try:
 except TypeError as e:
     print(f"Error: {e}")
 
+# min and max functions
+numbers = [1, 2, 3, 4, 5]
+print(min(numbers))  # Output: 1
+print(max(numbers))  # Output: 5
+# Using min and max with a custom key
+print(min(numbers, key=lambda x: -x))  # Output: 5 (max value)
+# Using min and max with a list of tuples
+tuples = [(1, 2), (3, 4), (5, 6)]
+print(min(tuples, key=lambda x: x[0]))  # Output: (1, 2) (min by first element)
+print(max(tuples, key=lambda x: x[1]))  # Output: (5, 6) (max by second element)
+# Using min and max with a list of strings
+strings = ["apple", "banana", "cherry"]
+print(min(strings))  # Output: 'apple' (lexicographically smallest)
+# Using min and max with a list of dictionaries
+dictionaries = [{'a': 1}, {'a': 2}, {'a': 3}]
+print(min(dictionaries, key=lambda x: x['a']))  # Output: {'a': 1} (min by 'a' value)
+# Using min and max with an empty list (will raise ValueError)
+try:
+    print(min([]))  # This will raise ValueError
+except ValueError as e:
+    print(f"Error: {e}")
+    # print(f"Error: {e}") Output: ('olleh', 'dlrow', 'yrrehc')
