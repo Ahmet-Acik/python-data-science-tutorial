@@ -76,3 +76,12 @@ print(list(enumerated))  # Output: [(1, 'apple'), (2, 'banana'), (3, 'cherry')]
 # Using enumerate in a loop
 for index, fruit in enumerate(fruits):
     print(f"Index: {index}, Fruit: {fruit}")
+
+# reversed() function
+reversed_list = list(reversed(fruits))
+print(reversed_list)  # Output: ['cherry', 'banana', 'apple']
+# Using reversed with a string
+reversed_string = ''.join(reversed("Hello"))
+print(reversed_string)  # Output: 'olleH'
+
+# sorted() function
