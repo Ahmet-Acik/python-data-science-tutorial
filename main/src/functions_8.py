@@ -52,3 +52,16 @@ print(reduced)  # Output: 15
 # Using reduce with a lambda function
 reduced = reduce(lambda x, y: x + y, numbers)
 print(reduced)  # Output: 15
+
+# zip() function
+list1 = [1, 2, 3]
+list2 = ['a', 'b', 'c']
+zipped = zip(list1, list2)
+print(list(zipped))  # Output: [(1, 'a'), (2, 'b'), (3, 'c')]
+# Unzipping the zipped lists
+unzipped = zip(*zip(list1, list2))
+print(list(unzipped))  # Output: [(1, 2, 3), ('a', 'b', 'c')]
+# Using zip with different lengths
+list3 = [4, 5]
+zipped = zip(list1, list2, list3)
+print(list(zipped))  # Output: [(1, 'a', 4), (2, 'b', 5)]
