@@ -48,3 +48,7 @@ def add(x, y):
 numbers = [1, 2, 3, 4, 5]
 reduced = reduce(add, numbers)
 print(reduced)  # Output: 15
+
+# Using reduce with a lambda function
+reduced = reduce(lambda x, y: x + y, numbers)
+print(reduced)  # Output: 15
