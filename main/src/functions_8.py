@@ -154,4 +154,4 @@ try:
     print(min([]))  # This will raise ValueError
 except ValueError as e:
     print(f"Error: {e}")
-    # print(f"Error: {e}") Output: ('olleh', 'dlrow', 'yrrehc')
+    # print(f"Error: {e}") Output: # Error: min() arg is an empty sequence
