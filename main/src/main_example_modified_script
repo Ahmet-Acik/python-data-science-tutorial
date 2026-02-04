@@ -1,4 +1,0 @@
-# main_example_modified_script
-import example_module_modified
-
-print("This is the main script.")
