@@ -99,8 +99,8 @@ result = greeting("Ahmet")
 print(result)  # None, the function does not return anything explicitly
 
 
-say_hello = greeting
-print(say_hello("Mehmet"))  # Hello Ahmet!
+say_hello_func = greeting  # type: ignore
+print(say_hello_func("Mehmet"))  # Hello Ahmet!
 
 
 # Function as an argument
@@ -127,8 +127,8 @@ print(f"apply_func(double) {apply_func(double, 5)}")  # 10
 # lambda function
 # syntax>  lambda arguments: expression e.g lambda x: x ** 2
 
-add = lambda x, y, z: x + y + z
-print(f"add(1,2,3) {add(1,2,3)}")  # 6
+add_lambda = lambda x, y, z: x + y + z  # type: ignore
+print(f"add_lambda(1,2,3) {add_lambda(1,2,3)}")  # 6
 
 print(lambda x: x ** 2, 5)  
 
@@ -142,12 +142,12 @@ print(f"odd(10) {odd(10)}")  # False
 
 
 # lambda function as an argument
-def apply_func(func, value):
+def apply_func_lambda(func, value):
     return func(value)
 
 
-print(f"apply_func(lambda x: x ** 2, 5) {apply_func(lambda x: x ** 2, 5)}")  # 25
-print(f"apply_func(lambda x: x ** 3, 5) {apply_func(lambda x: x ** 3, 5)}")  # 125
+print(f"apply_func(lambda x: x ** 2, 5) {apply_func_lambda(lambda x: x ** 2, 5)}")  # 25
+print(f"apply_func(lambda x: x ** 3, 5) {apply_func_lambda(lambda x: x ** 3, 5)}")  # 125
 print(f"apply_func(lambda x: x * 2, 5) {apply_func(lambda x: x * 2, 5)}")  # 10
 
 
@@ -304,8 +304,8 @@ def power(base, exponent):
     return base**exponent
 
 
-square = partial(power, exponent=2)
-cube = partial(power, exponent=3)
+square = partial(power, exponent=2)  # type: ignore
+cube = partial(power, exponent=3)  # type: ignore
 
 print(f"square(5) {square(5)}")  # 25
 print(f"cube(5) {cube(5)}")  # 125
@@ -345,14 +345,14 @@ say_hello()
 
 
 @my_decorator
-def say_hello():
+def say_hello_decorated():
     print("Hello!")
 
 
-say_hello()
+say_hello_decorated()
 
 
-def my_decorator(func):
+def my_decorator_with_args(func):
     def wrapper(*args, **kwargs):
         print("Something is happening before the function is called.")
         result = func(*args, **kwargs)
@@ -362,18 +362,19 @@ def my_decorator(func):
     return wrapper
 
 
-@my_decorator
-def say_hello(name):
+@my_decorator_with_args
+def say_hello_with_name(name):
     print(f"Hello {name}!")
 
 
-say_hello("Ahmet")
+say_hello_with_name("Ahmet")
 
 
 # decorator with arguments
 def repeat(num_times):
     def decorator_repeat(func):
         def wrapper(*args, **kwargs):
+            result = None
             for _ in range(num_times):
                 result = func(*args, **kwargs)
             return result
@@ -384,11 +385,11 @@ def repeat(num_times):
 
 
 @repeat(num_times=3)
-def greet(name):
+def greet_repeated(name):
     print(f"Hello {name}!")
 
 
-greet("Ahmet")
+greet_repeated("Ahmet")
 
 def add_item_toList(item, abc=None):
     if abc is None:
@@ -400,7 +401,7 @@ print(add_item_toList(5))
 print(add_item_toList(10))
 print(add_item_toList(15))
 
-def add_item_toList(item, abc=[]):
+def add_item_toList_bad(item, abc=[]):
     abc.append(item)
     return abc
 
@@ -426,7 +427,7 @@ print(math_operations(5, 3, add))
 print(math_operations(5, 3, subtract))
 print(math_operations(5, 3, multiply))
 
-def math_operations(a, b, operation):
+def math_operations_str(a, b, operation):
     if operation == "+":
         return a + b
     elif operation == "-":
@@ -437,13 +438,13 @@ def math_operations(a, b, operation):
         return "Invalid operation"
     
 
-print(math_operations(5, 3, "+"))
-print(math_operations(5, 3, "-"))
-print(math_operations(5, 3, "*"))
-print(math_operations(5, 3, "/"))
+print(math_operations_str(5, 3, "+"))
+print(math_operations_str(5, 3, "-"))
+print(math_operations_str(5, 3, "*"))
+print(math_operations_str(5, 3, "/"))
 
 
-def math_operations(a, b, operation):
+def math_operations_dict(a, b, operation):
     operations = {
         "+": lambda x, y: x + y,
         "-": lambda x, y: x - y,
@@ -451,10 +452,10 @@ def math_operations(a, b, operation):
         "/": lambda x, y: x / y if y != 0 else "Division by zero error"
     }
     return operations.get(operation, lambda x, y: "Invalid operation")(a, b)
-print(math_operations(5, 3, "+"))  # 8
-print(math_operations(5, 3, "-"))  # 2
-print(math_operations(5, 3, "*"))  # 15
-print(math_operations(5, 3, "/"))  # 1.6666666666666667
-print(math_operations(5, 0, "/"))  # Division by zero error
+print(math_operations_dict(5, 3, "+"))  # 8
+print(math_operations_dict(5, 3, "-"))  # 2
+print(math_operations_dict(5, 3, "*"))  # 15
+print(math_operations_dict(5, 3, "/"))  # 1.6666666666666667
+print(math_operations_dict(5, 0, "/"))  # Division by zero error
 
 
