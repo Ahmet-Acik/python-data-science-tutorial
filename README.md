@@ -73,8 +73,10 @@ python-data-science-tutorial/
 │       ├── 28_main_example_modified_script # Modified example
 │       ├── 29_variable_se.py # Variable scope
 │       ├── 30_matplotlib_intro.py # Matplotlib plotting
-│       └── ...               # Additional files
-├── notebooks/                # Jupyter notebooks
+│       ├── 31_scikit_learn_intro.py # Introduction to machine learning with Scikit-learn
+│       ├── 32_python_quiz.py # Interactive quiz on Python basics
+│       ├── 33_flask_intro.py # Introduction to web development with Flask
+│       └── ...               # Additional files├── docs/                    # Documentation guides├── notebooks/                # Jupyter notebooks
 └── tests/                    # Test files
 ```
 
