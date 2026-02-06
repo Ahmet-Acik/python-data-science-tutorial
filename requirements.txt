@@ -115,3 +115,4 @@ widgetsnbextension==4.0.14
 
 soundfile~=0.13.1
 python-pptx~=1.0.2
+flask==3.0.0
