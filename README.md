@@ -21,6 +21,14 @@ A comprehensive Python tutorial covering fundamental programming concepts to adv
    pip install -r requirements.txt
    ```
 
+## Best Practices
+
+- **Virtual Environments**: Always use virtual environments to isolate dependencies.
+- **Code Style**: Follow PEP 8 guidelines for readable code.
+- **Testing**: Write unit tests and run them regularly.
+- **Performance**: Profile code with cProfile to identify bottlenecks.
+- **Documentation**: Keep code and README updated.
+
 ## Usage
 
 Each Python file in the `main/src/` directory demonstrates a specific concept. Run them individually to see examples:
@@ -76,6 +84,7 @@ python-data-science-tutorial/
 │       ├── 31_scikit_learn_intro.py # Introduction to machine learning with Scikit-learn
 │       ├── 32_python_quiz.py # Interactive quiz on Python basics
 │       ├── 33_flask_intro.py # Introduction to web development with Flask
+│       ├── 34_profiling_intro.py # Introduction to code profiling
 │       └── ...               # Additional files├── docs/                    # Documentation guides├── notebooks/                # Jupyter notebooks
 └── tests/                    # Test files
 ```
@@ -121,3 +130,35 @@ Feel free to contribute by:
 ## License
 
 This project is for educational purposes. Feel free to use and modify as needed.
+
+## Deployment
+
+### As a PyPI Package
+
+To package and install locally:
+
+```bash
+pip install .
+```
+
+### Using Docker
+
+Build the Docker image:
+
+```bash
+docker build -t python-tutorial .
+```
+
+Run a script:
+
+```bash
+docker run python-tutorial
+```
+
+Run the Flask app:
+
+```bash
+docker run -p 5000:5000 python-tutorial python main/src/33_flask_intro.py
+```
+
+Then visit http://localhost:5000
