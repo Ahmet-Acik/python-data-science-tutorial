@@ -91,6 +91,7 @@ rpds-py==0.25.1
 scikit-learn==1.7.0
 scipy==1.15.3
 seaborn==0.13.2
+plotly==5.24.1
 Send2Trash==1.8.3
 setuptools==80.9.0
 six==1.17.0
